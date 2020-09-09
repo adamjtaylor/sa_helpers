@@ -1,10 +1,16 @@
-function total_spectrum(input_imzml, sa_path)
+function total_spectrum(input_imzml, input_sap, sa_path)
 
 %% initialise
 addpath(genpath(sa_path));
 addJARsToClassPath();
 
 [filepath,name,ext] = fileparts(input_imzml);
+
+
+% Generate preprocessing workflow
+preprocessing = PreprocessingWorkflow();
+preprocessing.loadWorkflow(input_sap);
+
 
 peakPicking = GradientPeakDetection();
 medianPeakFilter = PeakThresholdFilterMedian(1, nzm_multiple);
