@@ -15,6 +15,6 @@ peakPicking.addPeakFilter(medianPeakFilter);
 
 peaks = peakPicking.process(combinedSpectrum);
 
-save('picked_peaks.mat', 'peaks', '-v7.3);
+save('picked_peaks.mat', 'peaks', '-v7.3');
 
 end
