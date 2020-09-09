@@ -1,0 +1,11 @@
+function peak_detection(input_file, sa_path)
+
+
+
+load(input_file);
+
+spectrum <- SpectralData(spectralChannels, intensities)
+
+
+medianPeakFilter = PeakThresholdFilterMedian(1, 3);
+peakPicking.addPeakFilter(medianPeakFilter);
