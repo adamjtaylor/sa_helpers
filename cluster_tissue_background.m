@@ -47,7 +47,7 @@ disp('Calculate cluster mean spectra')
   if bg_cluster == 1 
     tissue_cluster = 2;
     mean_intensity_tissue = mean_intensity_k2;
-    mean_intensity_bg = mean_intensity_k1
+    mean_intensity_bg = mean_intensity_k1;
   else
     tissue_cluster = 1;
     mean_intensity_tissue = mean_intensity_k1;
@@ -68,7 +68,7 @@ disp('Calculate cluster mean spectra')
   
   % Write into the mat file
   disp(['Saving workspace to: ' name '.mat'])
-  save(strcat(name(1), '.mat'), '-v7.3');
+  save(strcat(name(1), '_nf.mat'), '-v7.3');
 
   
  end
