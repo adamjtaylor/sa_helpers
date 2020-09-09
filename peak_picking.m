@@ -1,5 +1,7 @@
 function peak_picking(input_file, sa_path)
 
+%% Input is a mat file containing spectralChannels and intensities vectors
+
 %% initialise
 addpath(genpath(sa_path));
 addJARsToClassPath();
