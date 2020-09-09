@@ -13,7 +13,7 @@ spectrum = SpectralData(spectralChannels, intensities)
 medianPeakFilter = PeakThresholdFilterMedian(1, 3);
 peakPicking.addPeakFilter(medianPeakFilter);
 
-peaks = peakPicking.process(combinedSpectrum);
+peaks = peakPicking.process(spectrum);
 
 save('picked_peaks.mat', 'peaks', '-v7.3');
 
