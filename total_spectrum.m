@@ -27,4 +27,4 @@ totalSpectrum = totalSpectrum.get(1);
 spectralChannels = totalSpectrum.spectralChannels;
 intensities = totalSpectrum.intensities;
 
-save([name 'mean_spectrum.mat'], 'totalSpectrum',, 'spectralChannels', 'intensities', 'input_imzml', '-v7.3')
+save('mean_spectrum.mat', 'totalSpectrum', 'spectralChannels', 'intensities', 'input_imzml', '-v7.3')
