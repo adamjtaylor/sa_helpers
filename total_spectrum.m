@@ -3,6 +3,7 @@ function total_spectrum(input_imzml, input_sap, sa_path)
 %% initialise
 addpath(genpath(sa_path));
 addJARsToClassPath();
+nzm_multiple = 3;
 
 [filepath,name,ext] = fileparts(input_imzml);
 
