@@ -8,7 +8,7 @@ addJARsToClassPath();
 
 load(input_file);
 
-spectrum <- SpectralData(spectralChannels, intensities)
+spectrum = SpectralData(spectralChannels, intensities)
 
 medianPeakFilter = PeakThresholdFilterMedian(1, 3);
 peakPicking.addPeakFilter(medianPeakFilter);
