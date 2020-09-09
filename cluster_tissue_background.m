@@ -67,7 +67,7 @@ disp('Calculate cluster mean spectra')
   tissue_pixels = pixels(tissue_pixel_idx);
   
   % Write into the mat file
-  disp(['Saving workspace to: ' name '.mat'])
+  disp(['Saving workspace to: ' name(1) '.mat'])
   save(strcat(name(1), '_nf.mat'), '-v7.3');
 
   
