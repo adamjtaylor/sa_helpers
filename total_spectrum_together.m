@@ -22,8 +22,7 @@ intensities = cell(length(files_to_process),1);
 for i in 1:length(files_to_process)
 
 % obtain total spectrum
-disp(['Generating Total Spectrum for ' ,input_imzml]);
-parser = ImzMLParser(input_imzml);
+parser = ImzMLParser([files_to_process(i).folder filesep files_to_process(i).name]);  
 parser.parse;
 data = DataOnDisk(parser);
 
@@ -42,7 +41,7 @@ end
 
 combined_intensities = intensities{1};
 for i = 2:length(intensities)
-    combined_intensities = combined_intensities + combined_intensities{i};
+    combined_intensities = combined_intensities + intensities{i};
 end
 
 
