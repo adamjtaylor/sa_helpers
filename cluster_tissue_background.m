@@ -63,8 +63,8 @@ disp('Calculate cluster mean spectra')
   tissue_pixel_idx = find(kmeans_idx == tissue_cluster);
   
   % Make a datacube just of tissue data and tissue pixels
-  tissue_data = data(tissue_pixel_idx,tissue_peak_idx);
-  tissue_pixels = pixels(tissue_pixel_idx);
+  %tissue_data = data(tissue_pixel_idx,tissue_peak_idx);
+  %tissue_pixels = pixels(tissue_pixel_idx);
   
   % Write into the mat file
   disp(['Saving workspace to: ' name(1) '.mat'])
