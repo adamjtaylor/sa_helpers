@@ -19,7 +19,7 @@ intensities = cell(length(files_to_process),1);
 
 %% make spectra from each dataset
 
-for i in 1:length(files_to_process)
+for i = 1:length(files_to_process)
 
 % obtain total spectrum
 parser = ImzMLParser([files_to_process(i).folder filesep files_to_process(i).name]);  
