@@ -43,6 +43,7 @@ combined_intensities = intensities{1};
 for i = 2:length(intensities)
     combined_intensities = combined_intensities + intensities{i};
 end
+intensities = combined_intensities;
 
 
 save('mean_spectrum_together.mat', 'spectralChannels', 'intensities', 'input_folder', 'input_sap', '-v7.3')
