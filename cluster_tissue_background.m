@@ -14,7 +14,13 @@ function cluster_tissue_background(input_file, distance, k, max_peaks, sa_path)
   small_data = data(:,top_peaks_idx);
 
   disp('Running k-means clustering')
-  [kmeans_idx, ~, ~ ] = kmeans(small_data, k, 'distance', distance);
+  
+  try
+    [kmeans_idx, ~, ~ ] = kmeans(small_data, k, 'distance', distance);
+  catch
+    warning('Problem using kmeans clustering  - likely with cosine distance.  Resorting to euclidean distance');
+    [kmeans_idx, ~, ~ ] = kmeans(small_data, k, 'distance', 'euclidean');
+  end    
 
   %% Make mean spectrum
 disp('Calculate cluster mean spectra')
