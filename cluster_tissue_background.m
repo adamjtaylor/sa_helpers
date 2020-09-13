@@ -18,8 +18,8 @@ function cluster_tissue_background(input_file, distance, k, max_peaks, sa_path)
   try
     [kmeans_idx, ~, ~ ] = kmeans(small_data, k, 'distance', distance);
   catch
-    warning('Problem using kmeans clustering  - likely with cosine distance.  Resorting to correlation distance');
-    [kmeans_idx, ~, ~ ] = kmeans(small_data, k, 'distance', 'correlation');
+    warning('Problem using kmeans clustering  - likely with cosine distance.  Resorting to default distance');
+    [kmeans_idx, ~, ~ ] = kmeans(small_data, k);
   end    
 
   %% Make mean spectrum
