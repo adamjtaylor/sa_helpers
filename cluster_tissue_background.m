@@ -17,9 +17,18 @@ function cluster_tissue_background(input_file, distance, k, max_peaks, sa_path)
   
   try
     [kmeans_idx, ~, ~ ] = kmeans(small_data, k, 'distance', distance);
-  catch
-    warning('Problem using kmeans clustering  - likely with cosine distance.  Resorting to default distance');
-    [kmeans_idx, ~, ~ ] = kmeans(small_data, k);
+  catch ME
+    switch ME.identifier
+      case 'stats:kmeans:ZeroDataForCos'
+        warning('Some points have small relative magnitudes, making them effectively zero. Setting these to NaN');
+        xnorm = sqrt(sum(small_data.^2,2));
+        zero_rows  = xnorm <=eps(max(xnorm));
+        good_data = small_data;
+        good_data(zero_rows ==1,:) = NaN;
+        [kmeans_idx_fixed, ~, ~ ] = kmeans(good_data, k, 'distance', distance);
+      otherwise
+        rethrow(ME)
+    end
   end    
 
   %% Make mean spectrum
