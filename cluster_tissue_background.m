@@ -25,7 +25,7 @@ function cluster_tissue_background(input_file, distance, k, max_peaks, sa_path)
         zero_rows  = xnorm <=eps(max(xnorm));
         good_data = small_data;
         good_data(zero_rows ==1,:) = NaN;
-        [kmeans_idx_fixed, ~, ~ ] = kmeans(good_data, k, 'distance', distance);
+        [kmeans_idx, ~, ~ ] = kmeans(good_data, k, 'distance', distance);
       otherwise
         rethrow(ME)
     end
