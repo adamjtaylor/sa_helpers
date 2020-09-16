@@ -38,7 +38,5 @@ calc_spatial_chaos <- function(input_file) {
       s_chaos = map_dbl(index, calc_s_chaos)
     ) %>%
     write_csv("spatial_chaos_tissue.csv")
-  
-  h5_file$close_all()
-  
+    
 }
