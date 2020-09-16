@@ -1,3 +1,5 @@
+calc_spatial_chaos <- function(input_file) {
+
 library(tidyverse)
 library(hdf5r)
 library(SPUTNIK)
@@ -30,3 +32,5 @@ tibble(
   write_csv("spatial_chaos_tissue.csv")
 
 h5_file$close_all()
+  
+}
